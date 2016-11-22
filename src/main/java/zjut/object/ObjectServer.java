@@ -1,4 +1,4 @@
-package zjut.echo;
+package zjut.object;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -18,7 +18,7 @@ import io.netty.handler.ssl.util.SelfSignedCertificate;
 /**
  * Created by Ryan on 2016/11/22.
  */
-public class EchoServer {
+public class ObjectServer {
     static final boolean SSL = System.getProperty("ssl") != null;
     static final int PORT = Integer.parseInt(System.getProperty("port", "8007"));
 
@@ -50,14 +50,13 @@ public class EchoServer {
                             }
                             //p.addLast(new LoggingHandler(LogLevel.INFO));
                             // 以("\n")为结尾分割的 解码器
-//                            pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
-
+                            pipeline.addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
                             // 字符串解码 和 编码
                             pipeline.addLast("decoder", new StringDecoder());
                             pipeline.addLast("encoder", new StringEncoder());
 
                             // 自己的逻辑Handler
-                            pipeline.addLast(new EchoServerHandler());
+                            pipeline.addLast(new ObjectServerHandler());
                         }
                     });
 

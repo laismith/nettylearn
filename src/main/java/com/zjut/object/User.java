@@ -1,4 +1,4 @@
-package zjut.object;
+package com.zjut.object;
 
 /**
  * Created by Ryan on 2016/11/22.
@@ -7,6 +7,18 @@ public class User {
     private String name;
     private String id;
     private String age;
+    public User() {
+    }
+    public User(String name, String id, String age) {
+        this.name = name;
+        this.id = id;
+        this.age = age;
+    }
+    public User(String name, long id, int age) {
+        this.name = name;
+        this.id = Long.toString(id);
+        this.age = Integer.toString(age);
+    }
 
     public String getName() {
         return name;

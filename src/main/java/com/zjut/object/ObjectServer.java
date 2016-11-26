@@ -1,4 +1,4 @@
-package zjut.object;
+package com.zjut.object;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;

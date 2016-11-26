@@ -1,4 +1,4 @@
-package zjut.echo;
+package com.zjut.echo;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
